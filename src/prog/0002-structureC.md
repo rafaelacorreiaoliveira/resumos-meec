@@ -1,18 +1,23 @@
 # Estrutura de um Programa em C
-![./img/img4.png](./img/img4.png)
-![./img/img5.png](./img/img5.png)
 
 ## Léxico, Sintaxe e Semântica
 
 **Nível Léxico**: Indica como os caracteres se combinam para produzir **elementos da linguagem**, e.g., i e f dão origem ao **if**. Em C temos vários tipos de elementos léxicos: Identificadores, Palavras-Chave, Constantes, Operadores, Separadores.
 
 **Nível Sintático**: Indica como é que os elementos da linguagem se devem combinar para produzir expressões válidas, e.g.,
-• **if (answer == 42)**
-• **exit (1)**
+
+```c
+ if (answer == 42)
+ exit (1)
+```
 
 **Nível Semântico**: Como as expressões se combinam para ter um determinado significado, e.g., sair do programa se a variável answer assumir o valor 42.
 
-**Nota**: 2 programas escritos em linguagens diferentes podem realizar a mesma acção (semântica) mas utilizando símbolos diferentes para escrever o programa (sintaxe).
+::: tip Nota
+
+2 programas escritos em linguagens diferentes podem realizar a mesma acção (semântica) mas utilizando símbolos diferentes para escrever o programa (sintaxe).
+
+:::
 
 ## Tokens
 
@@ -22,7 +27,7 @@ Um programa em C consiste numa sequência de tokens que podem ser keywords(palav
 printf("Hello, World! \n");
 ```
 
-Tem os seguintes *tokens:*
+Tem os seguintes _tokens:_
 
 ```c
 printf
@@ -32,7 +37,11 @@ printf
 ;
 ```
 
-**Nota**: O “;” é o **terminador** de uma declaração em C.
+::: tip Nota
+
+O “;” é o **terminador** de uma declaração em C.
+
+:::
 
 ## Comentários
 
@@ -40,7 +49,7 @@ Os **comentários** devem ser utilizados para documentar o programa, as funçõe
 
 **Não se devem utilizar comentários** para explicar instruções, isso, faz parte do conhecimento que se deve ter da linguagem!
 
-Um comentário deve começar por “/*” e acabar com “*/”. Caso o comentário corresponda apenas a uma linha basta preceder o comentário de “//”.
+Um comentário deve começar por “/_” e acabar com “_/”. Caso o comentário corresponda apenas a uma linha basta preceder o comentário de “//”.
 
 ```c
 /* Nome do programa: HelloWorld
@@ -59,14 +68,18 @@ return 0;
 ```
 
 ## Identificadores
-![./img/img6.png](./img/img6.png)
 
 Um identificador em C é um nome que permite identificar uma variável, uma função, etc. definida pelo utilizador.
 
 Um identificador deve começar por uma letra maiúscula ou minúscula, ou um ‘_’ seguido por letras, ‘_’ ou dígitos de 0 a 9.
 
-	NOTA 
-	Não pode começar com um dígito.
+::: tip Nota
+
+Um identificador nao pode começar com um digito.
+
+:::
+
+![./img/img6.png](./img/img6.png)
 
 ## Palavras Chave
 
@@ -74,7 +87,7 @@ A linguagem C inclui um conjunto de palavras reservadas ou palavras-chave que n�
 
 ![./img/img7.png](./img/img7.png)
 
-Todos os programas em C usam *libraries* que nos permitem executar certas funções tal como `printf`, que permite imprimir algo no ecrã. Para podermos usar a função `printf` devemos incluir a seguinte *library* no nosso código:
+Todos os programas em C usam _libraries_ que nos permitem executar certas funções tal como `printf`, que permite imprimir algo no ecrã. Para podermos usar a função `printf` devemos incluir a seguinte _library_ no nosso código:
 
 ```c
 #include <stdio.h>
@@ -86,23 +99,32 @@ int main() {
 
 ## Tipos de Dados
 
-1) **Tipos Básicos-** Estes são tipos aritméticos e são classificados em: (a) tipos integer e (b) tipos floating-point
+1. **Tipos Básicos-** Estes são tipos aritméticos e são classificados em:
 
-2) **Tipos Enumerados-** São tipos aritméticos e eles eram usados para definir variáveis aos quais só podem ser dados valores integer discretos ao longo do programa.
+- Tipos integer
+- Tipos floating-point
 
-3) **Tipo void-** O especificador de tipo *void* indica que não há valor disponível.
+2. **Tipos Enumerados-** São tipos aritméticos e eles eram usados para definir variáveis aos quais só podem ser dados valores integer discretos ao longo do programa.
 
-4) **Tipo derivado-** Eles incluem: (a) Tipos Pointer, (b) Tipos Array, (c) Tipos Structure, (d) Tipos União, (e) Tipos Função
+3. **Tipo void-** O especificador de tipo _void_ indica que não há valor disponível.
 
-(a) Integers - números inteiros que podem ser negativos ou positivos: `char` , `short` ,`long` ,`int` ,`long long`
+4. **Tipo derivado-** Eles incluem:
 
-(b) Floating point numbers - números reais: `float` , `double`
+- Tipos Pointer;
+- Tipos Array;
+- Tipos Structure;
+- Tipos União;
+- Tipos Função.
 
-Unsigned Integers - números inteiros positivos: `unsigned char` , `unsigned short` ,`unsigned long` ,`unsigned int`
+**Integers** - números inteiros que podem ser negativos ou positivos: `char` , `short` ,`long` ,`int` ,`long long`
 
-String - Array de caracteres: `char name[ ]`
+**Floating point numbers** - números reais: `float` , `double`
 
-*Nota*: C não tem uma função de tipo booleano (Verdadeiro/Falso), por isso, usamos:
+**Unsigned Integers** - números inteiros positivos: `unsigned char` , `unsigned short` ,`unsigned long` ,`unsigned int`
+
+**String** - Array de caracteres: `char name[ ]`
+
+_Nota_: C não tem uma função de tipo booleano (Verdadeiro/Falso), por isso, usamos:
 
 ```c
 #define BOOL char
@@ -116,7 +138,7 @@ String - Array de caracteres: `char name[ ]`
 
 ### void
 
-1- **Function returns as void-** Há várias funções em C que não retornam nenhum valor ou pode-se dizer que retorna *`void`*. Uma função sem valor de retorno tem um tipo de retorno como `*void*`. Por exemplo**:**
+1- **Function returns as void-** Há várias funções em C que não retornam nenhum valor ou pode-se dizer que retorna _`void`_. Uma função sem valor de retorno tem um tipo de retorno como `*void*`. Por exemplo**:**
 
 ```c
 void exit (int status);
@@ -128,22 +150,23 @@ void exit (int status);
 int rand(void);
 ```
 
-3- **Pointers to void-** Um pointer do tipo void * representa o endereço do objeto, mas não o seu tipo. Por exemplo, a função de alocação de memória:
+3- **Pointers to void-** Um pointer do tipo void \* representa o endereço do objeto, mas não o seu tipo. Por exemplo, a função de alocação de memória:
 
 ```c
 void *malloc( size_t size );
 ```
 
 devolve um pointer para o void que se pode transformar noutro tipo de data.
+
 ## Tipos de Dados em Memória
 
 ### char (1 byte)
 
-‘A’    <br />    65(10)     <br />      41(16)       <br />   01000001(2)
+‘A’ <br /> 65(10) <br /> 41(16) <br /> 01000001(2)
 
 ### Int (4 bytes)
 
-2019(10)   <br /> 07E3(16)     <br />       00000000 00000000 00000111 11100011(2)
+2019(10) <br /> 07E3(16) <br /> 00000000 00000000 00000111 11100011(2)
 
 ### float (4 bytes)
 
@@ -160,7 +183,7 @@ sinal (1bit) <br /> expoente (11 bits) <br /> mantissa (52 bits)
 ## Variáveis
 
 - Case sensitive
-- Costumam começar por uma letra ou underscore (_)
+- Costumam começar por uma letra ou underscore (\_)
 
 **Variável** é o nome dado a uma zona de memória que o programa pode manipular.
 
@@ -175,7 +198,7 @@ sinal (1bit) <br /> expoente (11 bits) <br /> mantissa (52 bits)
 int main()
 {
 		// Variable_Type Variable_List;
-		
+
 		int a, b = 4, soma;
 		float media;
 
@@ -217,15 +240,16 @@ int main()
 
 		const int COMPRIMENTO = 20;
 		int perimetro, area;
-		
+
 		perimetro = 2 * LARGURA + 2 * COMPRIMENTO;
-		
+
 		printf("perimetro = %d\n", perimetro)
 		printf("area = &d\n", LARGURA*COMPRIMENTO)
 
 		return 0;
 }
 ```
+
 ![./img/img10.png](./img/img10.png)
 
 ## Classes de Armazenamento
@@ -241,19 +265,20 @@ int main()
 int main()
 {
 		register int i;
-		
+
 		for (i=0;i<INT_MAX;i++);
 
 		printf("Hello world!\n");
 		return 0;
 }
 ```
+
 ![./img/img11.png](./img/img11.png)
 
 ### Extern
 
 **`Extern`**: Utilizada quando a variável ou função está declarada noutro ficheiro.
-       `extern` *tipodedados nomevariável*;
+`extern` _tipodedados nomevariável_;
 
 `$gcc main.c support.c`
 
@@ -285,15 +310,16 @@ printf("count is %d\n", count)
 
 ## Operadores Aritméticos
 
-| Operador | Descrição |
-| -------- | --------- |
-| +        | Adds two operands|
-| -        | Subtracts second operand from the first |
-| * | Multiplies both operands |
-| / | Divides numerator by de-numerator |
-| % | Modulus Operator and remainder of after an integer division |
-| ++ | Increment operator increases the integer value by one |
-|  -- | Decrement operator decreases the integer value by one |
+| Operador | Descrição                                                   |
+| -------- | ----------------------------------------------------------- |
+| +        | Adds two operands                                           |
+| -        | Subtracts second operand from the first                     |
+| \*       | Multiplies both operands                                    |
+| /        | Divides numerator by de-numerator                           |
+| %        | Modulus Operator and remainder of after an integer division |
+| ++       | Increment operator increases the integer value by one       |
+| --       | Decrement operator decreases the integer value by one       |
+
 <br />
 
 ```c
@@ -305,7 +331,7 @@ int main()
 {
 		int x, y;
 		short z;
-		
+
 		printf("Operadores Aritméticos!\n");
 		printf("x = %d, y = %d, z = %d\n", x, y, z);
 		x = 1024;
@@ -327,6 +353,7 @@ int main()
 ```
 
 ## Operadores Relacionais
+
 A = 10 <br />
 B = 20
 | Operador | Descrição | Exemplo |
@@ -341,6 +368,7 @@ B = 20
 <br />
 
 ## Operadores Lógicos
+
 A = 1 <br />
 B = 0
 | Operador | Descrição | Exemplo |
@@ -350,6 +378,7 @@ B = 0
 | ! | Called Logical NOT Operator. It is used to reverse the logical state of its operand. If a condition is true, then Logical NOT operator will make it false. | !(A && B) is true. |
 
 ## Operadores Bitwise
+
 A = 60(10) = 0011 1100(2) <br />
 B = 13(10) = 0000 1101 (2)
 | Operador | Descrição | Exemplo |
@@ -363,19 +392,19 @@ B = 13(10) = 0000 1101 (2)
 
 ## Operadores de Atribuição
 
-| Operador | Descrição |
-| -------- | --------- |
-| = | Simple assignment operator. Assigns values from right side operands to left side operand. |
-| += | Add AND assignment operator. It adds the right operand to the left operand and assign the result to the left operand. |
-| -= | Add AND assignment operator. It subtracts the right operand to the left operand and assigns the result to the left operand. |
-| *= | Multiply AND assignment operator. It multiplies the right operand with the left operand and assigns the result to the left operand. |
-| /= | Divide AND assignment operator. It divides the left operand with the right operand and assigns the result to the left operand. |
-| %= | Modulus AND assignment operator. It takes modulus using two operands and assigns the result to the left operand. |
-| <<= | Left shift AND assignment operator. |
-| >>= | Right shift AND assignment operator. |
-| &= | Bitwise AND assignment operator. |
-| ^= | Bitwise exclusive OR and assignment operator. |
-| \|= | Bitwire inclusive OR and assignment and assignment operator. |
+| Operador | Descrição                                                                                                                           |
+| -------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| =        | Simple assignment operator. Assigns values from right side operands to left side operand.                                           |
+| +=       | Add AND assignment operator. It adds the right operand to the left operand and assign the result to the left operand.               |
+| -=       | Add AND assignment operator. It subtracts the right operand to the left operand and assigns the result to the left operand.         |
+| \*=      | Multiply AND assignment operator. It multiplies the right operand with the left operand and assigns the result to the left operand. |
+| /=       | Divide AND assignment operator. It divides the left operand with the right operand and assigns the result to the left operand.      |
+| %=       | Modulus AND assignment operator. It takes modulus using two operands and assigns the result to the left operand.                    |
+| <<=      | Left shift AND assignment operator.                                                                                                 |
+| >>=      | Right shift AND assignment operator.                                                                                                |
+| &=       | Bitwise AND assignment operator.                                                                                                    |
+| ^=       | Bitwise exclusive OR and assignment operator.                                                                                       |
+| \|=      | Bitwire inclusive OR and assignment and assignment operator.                                                                        |
 
 ```c
 #include <stdio.h>
@@ -402,36 +431,40 @@ int main()
 		return 0;
 }
 ```
+
 ![./img/img12.png](./img/img12.png)
 
 ## Operadores
-| Operador | Descrição |
-| -------- | --------- |
-| sizeof() | Returns the size of a variable |
-| & | Returns the address of a variable |
-| * | Pointer to a variable |
-| ? : | Conditional Expression |
+
+| Operador | Descrição                         |
+| -------- | --------------------------------- |
+| sizeof() | Returns the size of a variable    |
+| &        | Returns the address of a variable |
+| \*       | Pointer to a variable             |
+| ? :      | Conditional Expression            |
+
 <br />
 
 ### Precedência de operadores
 
-| Nome | Operadores | Associatividade |
-| ---- | ---------- | --------------- |
-| Postfix | () []  ->  .  ++  -- | Left to right |
-| Unary | +  -  !  ~  ++  --  (type)*  &  sizeof | Right to Left |
-| Multiplicative | *  /  % | Left to right |
-| Additive | +  - | Left to right |
-| Shift | << >> | Left to right |
-| Relational | <  <=  >  >= | Left to right |
-| Equality | ==   != | Left to right |
-| Bitwise AND | & | Left to right |
-| Bitwise XOR | ^ | Left to right |
-| Bitwise OR | \| | Left to right|
-| Logical AND | && | Left to right |
-| Logical OR | \|\| | Left to right |
-| Conditional | ?: | Right to left |
-| Assignment | =  +=  -=  *=  /=  %=  >>=  <<=  &=  ^=  \|= | Right to left |
-| Comma | , | Left to right |
+| Nome           | Operadores                          | Associatividade |
+| -------------- | ----------------------------------- | --------------- |
+| Postfix        | () [] -> . ++ --                    | Left to right   |
+| Unary          | + - ! ~ ++ -- (type)\* & sizeof     | Right to Left   |
+| Multiplicative | \* / %                              | Left to right   |
+| Additive       | + -                                 | Left to right   |
+| Shift          | << >>                               | Left to right   |
+| Relational     | < <= > >=                           | Left to right   |
+| Equality       | == !=                               | Left to right   |
+| Bitwise AND    | &                                   | Left to right   |
+| Bitwise XOR    | ^                                   | Left to right   |
+| Bitwise OR     | \|                                  | Left to right   |
+| Logical AND    | &&                                  | Left to right   |
+| Logical OR     | \|\|                                | Left to right   |
+| Conditional    | ?:                                  | Right to left   |
+| Assignment     | = += -= \*= /= %= >>= <<= &= ^= \|= | Right to left   |
+| Comma          | ,                                   | Left to right   |
+
 <br />
 ## I/O (Input/Output)
 
@@ -468,15 +501,15 @@ int main( ) {
 int main( )
 {
 		int c, i;
-		
+
 		printf( "Enter a value :" );
-		
+
 		for(i=0;i<4;i++)
 		{
 		c = getchar( );
 		printf( "\nYou entered: " )
 		putchar( c );
-		
+
 		}
   return 0;
 }
@@ -503,6 +536,7 @@ int main( ) {
 		return 0;
 }
 ```
+
 ![./img/img16.png](./img/img16.png)
 <br />
 Funções `scanf()` e `printf()`
@@ -517,13 +551,14 @@ int main( ){
 		int i;
 
 		printf( "Enter a value :");
-		scanf("%s %d", str, &i);		
+		scanf("%s %d", str, &i);
 
 		printf( "\nYou entered: %s %d", str, i);
 
 		return 0;
 }
 ```
+
 ![./img/img17.png](./img/img17.png)
 
 `int printf(const char *format, ...)`
@@ -548,6 +583,7 @@ string incluindo a formatação dos argumentos
 
 ![./img/img23.png](./img/img23.png)
 ![./img/img22.png](./img/img24.png)
+
 ```c
 #include <stdio.h>
 #include <stdlib.h>
@@ -567,25 +603,26 @@ int main()
 		return 0
 }
 ```
+
 ## Caractere Especial \
 
 A utilização do caractere especial \ permite definir o que se designam por **escape sequences** que permitem: (1) alterar o significado especial de um caracter como “que deixa de ser interpretado como delimitador e passa a ser simplesmente o caractere “; (2) representar caracteres especiais como \n que significa mudança de linha.
 
-	NOTA 
-	\a Alarm or Beep
-	\b Backspace
-	\f Form Feed
-	\n New Line
-	\r Carriage Return
-	\t Tab (Horizontal)
-	\v Vertical Tab
-	\\ Backslash
-	\' Single Quote
-	\" Double Quote
-	\? Question Mark
-	\ooo octal number
-	\xhh hexadecimal number
-	\0 Null
+    NOTA
+    \a Alarm or Beep
+    \b Backspace
+    \f Form Feed
+    \n New Line
+    \r Carriage Return
+    \t Tab (Horizontal)
+    \v Vertical Tab
+    \\ Backslash
+    \' Single Quote
+    \" Double Quote
+    \? Question Mark
+    \ooo octal number
+    \xhh hexadecimal number
+    \0 Null
 
 ```c
 #include <stdio.h>
